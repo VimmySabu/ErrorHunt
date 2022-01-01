@@ -68,7 +68,7 @@
             <form class='col-12' action="/login/check" onsubmit="return validate()" method="GET">
 
               <div class="form-group">
-                <input id="uid" name="uid" class='form-control' type="email" placeholder="Enter Username(email id)" id="mail" required>
+                <input id="uid" name="uid" class='form-control' autocomplete="off" type="email" placeholder="Enter Username(email id)" id="mail" required>
                 <label for="email" id="feedback" style="color:red; visibility:hidden">Enter valid e-mail id</label>
 
               </div>
@@ -76,7 +76,7 @@
 
 
               <div class="form-group">
-                  <input id="pwd" name="pwd" class='form-control' type="password" placeholder="Enter Password" id="pwd" required>
+                  <input id="pwd" name="pwd" class='form-control' autocomplete="off" type="password" placeholder="Enter Password" id="pwd" required>
                   <label for="pwd" id="feedback2" style="color:red; visibility:hidden">Password should be minimum 8 characters</label>
               </div>
 
