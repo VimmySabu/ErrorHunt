@@ -69,8 +69,8 @@ booksRouter.get('/:id',function(req,res){
 booksRouter.post('/delete', function (req, res) {
 
     const id = req.body.id;  
-
-    bookdata.findOneAndDelete({ _id: id })
+    //part #2 point 9
+    bookdata.deleteOne({ _id: id })
         .then(function () {
 
             res.redirect('/books')
@@ -100,8 +100,8 @@ booksRouter.post('/edit', function (req, res) {
 
 //router to update book
 booksRouter.post('/update', function (req, res) {
-
-    bookdata.findByIdAndUpdate(req.body.id, { $set: req.body }, function (err, data) {
+//part #2 point 9
+    bookdata.updateOne({_id:req.body.id}, { $set: req.body }, function (err, data) {
         if (err) {
             res.json({ status: "Failed" });
         }

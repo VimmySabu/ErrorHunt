@@ -68,8 +68,8 @@ authorsRouter.get('/:id',function(req,res){
 authorsRouter.post('/delete', function (req, res) {
 
     const id = req.body.id;  
-
-    authordata.findOneAndDelete({ _id: id })
+//part #2 point 9
+    authordata.deleteOne({ _id: id })
         .then(function () {
 
             res.redirect('/authors')
@@ -100,8 +100,8 @@ authorsRouter.post('/edit', function (req, res) {
 
 //router to update author
 authorsRouter.post('/update', function (req, res) {
-
-    authordata.findByIdAndUpdate(req.body.id, { $set: req.body }, function (err, data) {
+//part #2 point 9
+    authordata.updateOne({_id:req.body.id}, { $set: req.body }, function (err, data) {
         if (err) {
             res.json({ status: "Failed" });
         }
