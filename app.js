@@ -46,10 +46,9 @@ app.use('/home',homeRouter);
 app.use('/books',booksRouter); 
 app.use('/authors',authorsRouter); 
 
-const port=5000;
+
 
 app.get('/',function(req,res){
-
     res.render('index',{});
     
 });
@@ -58,6 +57,6 @@ app.get('/',function(req,res){
 
 // Part #1 Point 5
 
-app.listen(port,()=>{
-    console.log("Server Ready on "+port);
-});
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => console.log('Listening on', PORT));
